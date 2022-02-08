@@ -1,2 +1,59 @@
 @use '/src/styles/globals/utilities';
 @import '/src/styles/globals/variables';
+@import '/src/styles/globals/mixins';
+
+.header {
+    height: 1000px;
+    background-image: url('/src/images/header/header-background.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    &__holder {
+        position: relative;
+        top: 227px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        &__inner {
+            font-family: $sansSerif;
+            color: $white;
+
+            &__title {
+                margin-bottom: 25px;
+            }
+
+            &__description {
+                margin-bottom: 50px;
+            }
+
+            &__buttons {
+                margin-bottom: 70px;
+                #downloadButton {
+                    margin-right: 13px;
+                }
+
+                #contactUs {
+                    margin-left: 13px;
+                }
+
+                button {
+                    height: 40px;
+                    width: 167px;
+                    border-radius: 5px;
+                    border: solid $white 2px;
+                    background-color: transparent;
+                    color: $white;
+                    font-weight: bold;
+
+                    &:hover {
+                        background-color: $white;
+                        color: $black;
+                        transition: background-color 0.4s, color 0.4s;
+                    }
+                }
+            }
+        }
+    }
+}

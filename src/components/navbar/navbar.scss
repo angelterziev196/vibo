@@ -1,25 +1,43 @@
 @import '/src/styles/globals/_variables.scss';
+@import '/src/styles/globals/mixins';
 
 .navigation {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    position: absolute;
+    width: 100%;
 
-    a {
-        text-decoration: none;
-        font-family: $sansSerif;
-        font-weight: bold;
-        color: $white;
-    }
-
-    &__list {
-        list-style: none;
+    &__holder {
         display: flex;
         flex-direction: row;
-        padding: 10px 20px;
+        justify-content: space-between;
 
-        li {
-            padding: 10px 40px;
+        &__logo {
+            width: 100px;
+            height: 40px;
+            margin: 10px 50px;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+            font-family: $sansSerif;
+            font-weight: bold;
+            color: $white;
+        }
+
+        &__list {
+            margin: 0;
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            padding: 10px 20px;
+
+            li {
+                padding: 10px 40px;
+
+                a:hover {
+                    transition: color 0.4s;
+                }
+            }
         }
     }
 }
