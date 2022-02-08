@@ -1,0 +1,25 @@
+@import '/src/styles/globals/_variables.scss';
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    a {
+        text-decoration: none;
+        font-family: $sansSerif;
+        font-weight: bold;
+        color: $white;
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        padding: 10px 20px;
+
+        li {
+            padding: 10px 40px;
+        }
+    }
+}
