@@ -3,55 +3,88 @@
 @import '/src/styles/globals/mixins';
 
 .header {
-    height: 1000px;
+    height: 100vh;
     background-image: url('/src/images/header/header-background.png');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        position: absolute;
+        bottom: -5px;
+        background-image: url('/src/images/header/header-decoration.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 155px;
+        overflow: hidden;
+
+        @include breakpoint(decoration) {
+            display: none;
+        }
+    }
+
+    img {
+        max-width: 450px;
+
+        @include breakpoint(mobile) {
+            display: none;
+        }
+
+        @include breakpoint(tablet) {
+            display: none;
+        }
+
+        @include breakpoint(desktop) {
+            display: initial;
+        }
+    }
 
     &__holder {
+        width: 100%;
         position: relative;
-        top: 227px;
+        top: 128px;
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        font-family: $sansSerif;
+        color: $white;
 
-        &__inner {
-            font-family: $sansSerif;
-            color: $white;
+        &__title {
+            margin-bottom: 30px;
+        }
 
-            &__title {
-                margin-bottom: 25px;
+        &__description {
+            margin-bottom: 30px;
+        }
+
+        &__buttons {
+            margin-bottom: 30px;
+
+            &--download {
+                margin-right: 14px;
             }
 
-            &__description {
-                margin-bottom: 50px;
+            &--contact {
+                margin-left: 14px;
             }
 
-            &__buttons {
-                margin-bottom: 70px;
-                #downloadButton {
-                    margin-right: 13px;
-                }
+            button {
+                height: 40px;
+                width: 168px;
+                border-radius: 5px;
+                border: solid $white 2px;
+                background-color: transparent;
+                color: $white;
+                font-weight: bold;
 
-                #contactUs {
-                    margin-left: 13px;
-                }
-
-                button {
-                    height: 40px;
-                    width: 167px;
-                    border-radius: 5px;
-                    border: solid $white 2px;
-                    background-color: transparent;
-                    color: $white;
-                    font-weight: bold;
-
-                    &:hover {
-                        background-color: $white;
-                        color: $black;
-                        transition: background-color 0.4s, color 0.4s;
-                    }
+                &:hover {
+                    background-color: $white;
+                    color: $black;
+                    transition: background-color 0.4s, color 0.4s;
                 }
             }
         }

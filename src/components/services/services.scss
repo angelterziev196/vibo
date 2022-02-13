@@ -1,0 +1,10 @@
+@use '/src/styles/globals/utilities';
+@import '/src/styles/globals/variables';
+@import '/src/styles/globals/mixins';
+
+.services {
+    height: 100vh;
+    &__holder {
+        width: 100%;
+    }
+}

@@ -4,6 +4,7 @@
 .navigation {
     position: absolute;
     width: 100%;
+    overflow: hidden;
 
     &__holder {
         display: flex;
@@ -13,7 +14,7 @@
         &__logo {
             width: 100px;
             height: 40px;
-            margin: 10px 50px;
+            margin: 20px 50px;
             cursor: pointer;
         }
 
@@ -30,6 +31,24 @@
             display: flex;
             flex-direction: row;
             padding: 10px 20px;
+
+            &--open {
+                display: flex !important;
+                flex-direction: column;
+                padding-top: 50px;
+            }
+
+            @include breakpoint(mobile) {
+                display: none;
+            }
+
+            @include breakpoint(tablet) {
+                display: none;
+            }
+
+            @include breakpoint(desktop) {
+                display: flex;
+            }
 
             li {
                 padding: 10px 40px;
