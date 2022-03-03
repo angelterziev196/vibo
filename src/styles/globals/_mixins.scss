@@ -15,5 +15,9 @@
         @media (max-width: 1452px) {
             @content;
         }
+    } @else if $point == serviceDecoration {
+        @media (max-width: 992px) {
+            @content;
+        }
     }
 }

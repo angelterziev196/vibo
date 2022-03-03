@@ -6,15 +6,35 @@
     background-image: url('/src/images/services/services-background.png');
     height: 100vh;
 
+    @include breakpoint(serviceDecoration) {
+        height: auto;
+    }
+
+    @include breakpoint(tablet) {
+        height: auto;
+    }
+
     &__holder {
         padding-top: 70px;
         width: 100%;
         margin: 0;
 
+        @include breakpoint(serviceDecoration) {
+            padding-top: 20px;
+        }
+
+        @include breakpoint(tablet) {
+            padding: 20px;
+        }
+
         &__smartphone {
             display: flex;
             align-items: center;
             flex-direction: column;
+
+            @include breakpoint(serviceDecoration) {
+                display: none;
+            }
         }
 
         &__services {
@@ -24,9 +44,18 @@
             text-align: center;
             font-family: $sansSerif;
             padding: 0;
+            color: $servicesGray;
 
             &:nth-child(odd) {
                 margin-top: 50px;
+
+                @include breakpoint(serviceDecoration) {
+                    margin: auto;
+                }
+
+                @include breakpoint(tablet) {
+                    margin-top: 0;
+                }
             }
 
             &--service {
@@ -37,13 +66,29 @@
                 border-radius: 5px;
                 cursor: pointer;
 
+                @include breakpoint(serviceDecoration) {
+                    margin: auto;
+                    width: 100%;
+                    background-color: transparent;
+                }
+
+                @include breakpoint(tablet) {
+                    margin: auto;
+                    width: 100%;
+                    background-color: transparent;
+                }
+
                 &:hover {
                     transition: box-shadow 0.4s;
-                    box-shadow: 5px 5px 5px lightgrey;
+                    box-shadow: 2px 2px 3px 2px $lightgrey;
                 }
 
                 &:nth-child(2) {
-                    margin-right: 50px;
+                    margin-right: 100px;
+
+                    @include breakpoint(tablet) {
+                        margin-right: 0;
+                    }
                 }
 
                 img {
