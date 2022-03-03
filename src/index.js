@@ -1,22 +1,24 @@
 import './styles/index.scss';
 
 class Burger {
-    nav__holder = document.querySelector('.navigation__holder__list');
-    burger__menu = document.querySelector('.menu__btn');
+    navHolderList = document.querySelector('.navigation__holder__list');
+    burgerMenu = document.querySelector('.menu__btn');
+    openMenuFlag = false;
 
     constructor() {
-        this.burger__menu.addEventListener('click', () => {
+        this.burgerMenu.addEventListener('click', () => {
             this._burgerAnimation();
             this._toggleMenu();
         });
     }
 
     _burgerAnimation() {
-        this.burger__menu.classList.toggle('menu__btn--open');
+        this.burgerMenu.classList.toggle('menu__btn--open');
     }
 
     _toggleMenu() {
-        this.nav__holder.classList.toggle('navigation__holder__list--open');
+        this.navHolderList.classList.toggle('navigation__holder__list--open');
+        this.openMenuFlag = true;
     }
 }
 

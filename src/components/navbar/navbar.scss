@@ -2,14 +2,22 @@
 @import '/src/styles/globals/mixins';
 
 .navigation {
-    position: absolute;
+    z-index: 10;
+    position: fixed;
     width: 100%;
     overflow: hidden;
 
     &__holder {
         display: flex;
-        flex-direction: row;
+        align-items: center;
         justify-content: space-between;
+        // @include breakpoint(desktop) {
+        //     width: 100%;
+        //     position: fixed;
+        //     display: flex;
+        //     flex-direction: row;
+        //     justify-content: space-between;
+        // }
 
         &__logo {
             width: 100px;
@@ -26,32 +34,45 @@
         }
 
         &__list {
+            position: fixed;
+            top: 0;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            background-image: url('/src/images/header/header-background.png');
+
+            // flex-direction: row;
+            width: 100%;
+            height: 100%;
+            transform: translateY(calc(-100% - 60px));
+            transition: transform 0.4s;
+
             margin: 0;
             list-style: none;
-            display: flex;
-            flex-direction: row;
-            padding: 10px 20px;
+            // padding: 10px 20px;
 
             &--open {
-                display: flex !important;
-                flex-direction: column;
-                padding-top: 50px;
-            }
-
-            @include breakpoint(mobile) {
-                display: none;
+                transform: translateY(0px);
             }
 
             @include breakpoint(tablet) {
-                display: none;
+                // display: none;
             }
 
             @include breakpoint(desktop) {
                 display: flex;
+                position: relative;
+                top: auto;
+                left: auto;
+                width: auto;
+                height: auto;
+                transform: none;
+                background-image: none;
+                flex-direction: row;
             }
 
             li {
-                padding: 10px 40px;
+                padding: 20px 40px;
 
                 a:hover {
                     transition: color 0.4s;
