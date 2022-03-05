@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin').default;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -30,6 +31,11 @@ module.exports = {
     target: target,
 
     plugins: [
+        // new webpack.ProvidePlugin({
+        //     $: require.resolve('jquery'),
+        //     jQuery: require.resolve('jquery'),
+        //     'window.jQuery': 'jquery',
+        // }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin(),
         new HtmlWebpackPlugin({
@@ -83,6 +89,13 @@ module.exports = {
                 loader: 'html-loader',
                 options: {
                     preprocessor: processNestedHtml,
+                },
+            },
+            {
+                test: require.resolve('jquery'),
+                loader: 'expose-loader',
+                options: {
+                    exposes: ['$', 'jQuery'],
                 },
             },
         ],

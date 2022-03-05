@@ -58,19 +58,16 @@
                 padding: 4px 4px;
                 margin-bottom: 30px;
                 box-shadow: 2px 2px 3px $lightgrey;
+                padding: 20px;
 
-                @include breakpoint(desktop) {
-                    max-height: 40px;
-                    overflow: hidden;
+                p {
+                    display: none;
+                }
 
-                    &:hover {
-                        background-color: $buttonBackground;
-                        max-height: 150px;
-                        transition: background-color 1s, max-height 1s;
-                        p {
-                            color: $downloadBlue;
-                        }
-                    }
+                &:hover {
+                    background-color: $buttonBackground;
+                    max-height: 200px;
+                    transition: background-color 1s, max-height 1s;
                 }
 
                 &__wrap {

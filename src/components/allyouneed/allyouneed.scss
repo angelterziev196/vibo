@@ -9,11 +9,20 @@
         width: 100%;
 
         &__decor {
-            padding: 76px 96px 70px;
+            display: none;
+
+            @include breakpoint(desktop) {
+                display: initial;
+                padding: 76px 96px 70px;
+            }
         }
 
         &__content {
-            padding: 106px 96px 70px;
+            padding: 50px;
+            @include breakpoint(desktop) {
+                padding: 106px 96px 70px;
+            }
+
             font-family: $sansSerif;
             color: $downloadBlue;
 

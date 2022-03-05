@@ -1,8 +1,9 @@
 import './styles/index.scss';
-
-class Burger {
+import $ from 'jquery';
+class Init {
     navHolderList = document.querySelector('.navigation__holder__list');
     burgerMenu = document.querySelector('.menu__btn');
+    perks = document.querySelectorAll('.download__holder__perks__perk');
     openMenuFlag = false;
 
     constructor() {
@@ -10,6 +11,7 @@ class Burger {
             this._burgerAnimation();
             this._toggleMenu();
         });
+        this._toggleDownload();
     }
 
     _burgerAnimation() {
@@ -20,6 +22,16 @@ class Burger {
         this.navHolderList.classList.toggle('navigation__holder__list--open');
         this.openMenuFlag = true;
     }
+    _toggleDownload() {
+        this.perks.forEach((perk) => {
+            perk.addEventListener('mouseenter', () => {
+                $(perk).children('p').slideDown();
+            });
+            perk.addEventListener('mouseleave', () => {
+                $(perk).children('p').slideUp();
+            });
+        });
+    }
 }
 
-document.onload = new Burger();
+document.onload = new Init();
