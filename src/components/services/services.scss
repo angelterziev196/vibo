@@ -6,34 +6,22 @@
     background-image: url('/src/images/services/services-background.png');
     height: 100vh;
 
-    @include breakpoint(serviceDecoration) {
-        height: auto;
-    }
-
-    @include breakpoint(tablet) {
-        height: auto;
-    }
-
     &__holder {
-        padding-top: 70px;
+        padding-top: 30px;
         width: 100%;
         margin: 0;
 
-        @include breakpoint(serviceDecoration) {
-            padding-top: 20px;
-        }
-
-        @include breakpoint(tablet) {
-            padding: 20px;
+        @include breakpoint(desktop) {
+            padding-top: 70px;
         }
 
         &__smartphone {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
+            display: none;
 
-            @include breakpoint(serviceDecoration) {
-                display: none;
+            @include breakpoint(desktop) {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
             }
         }
 
@@ -47,35 +35,22 @@
             color: $servicesGray;
 
             &:nth-child(odd) {
-                margin-top: 50px;
+                margin: auto;
 
-                @include breakpoint(serviceDecoration) {
-                    margin: auto;
-                }
-
-                @include breakpoint(tablet) {
-                    margin-top: 0;
+                @include breakpoint(desktop) {
+                    margin-top: 50px;
                 }
             }
 
             &--service {
-                background-color: $white;
-                width: 70%;
-                margin-bottom: 50px;
-                padding: 30px 16px;
-                border-radius: 5px;
-                cursor: pointer;
+                background-color: transparent;
 
-                @include breakpoint(serviceDecoration) {
-                    margin: auto;
-                    width: 100%;
-                    background-color: transparent;
-                }
-
-                @include breakpoint(tablet) {
-                    margin: auto;
-                    width: 100%;
-                    background-color: transparent;
+                @include breakpoint(desktop) {
+                    background-color: $white;
+                    width: 70%;
+                    margin-bottom: 50px;
+                    padding: 30px 16px;
+                    border-radius: 5px;
                 }
 
                 &:hover {
@@ -84,10 +59,10 @@
                 }
 
                 &:nth-child(2) {
-                    margin-right: 100px;
+                    margin: 0;
 
-                    @include breakpoint(tablet) {
-                        margin-right: 0;
+                    @include breakpoint(desktop) {
+                        margin-right: 100px;
                     }
                 }
 

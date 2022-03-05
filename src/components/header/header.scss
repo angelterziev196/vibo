@@ -27,22 +27,17 @@
     }
 
     img {
-        max-width: 450px;
-
-        @include breakpoint(mobile) {
-            display: none;
-        }
-
-        @include breakpoint(tablet) {
-            display: none;
-        }
+        display: none;
 
         @include breakpoint(desktop) {
+            // display: none;
             display: initial;
+            max-width: 450px;
         }
     }
 
     &__holder {
+        margin: 0;
         width: 100%;
         position: relative;
         top: 128px;
@@ -62,14 +57,32 @@
         }
 
         &__buttons {
-            margin-bottom: 30px;
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            // @include breakpoint(desktop) {
+            //     display: block;
+            //     margin-bottom: 30px;
+            // }
+
+            @include breakpoint(tablet) {
+                display: block;
+                margin-bottom: 30px;
+            }
 
             &--download {
-                margin-right: 14px;
+                margin-right: 0;
+                margin-bottom: 30px;
+
+                @include breakpoint(tablet) {
+                    margin-right: 30px;
+                }
             }
 
             &--contact {
-                margin-left: 14px;
+                margin-left: 0;
             }
 
             button {
