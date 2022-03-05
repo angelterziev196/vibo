@@ -1,0 +1,56 @@
+@use '/src/styles/globals/utilities';
+@import '/src/styles/globals/variables';
+@import '/src/styles/globals/mixins';
+
+.allyouneed {
+    background-color: $allyouneedBackground;
+
+    &__holder {
+        width: 100%;
+
+        &__decor {
+            padding: 76px 96px 70px;
+        }
+
+        &__content {
+            padding: 106px 96px 70px;
+            font-family: $sansSerif;
+            color: $downloadBlue;
+
+            p {
+                color: $servicesGray;
+            }
+
+            ul {
+                padding: 0;
+                list-style: none;
+                font-weight: 600;
+            }
+
+            h3 {
+                padding-bottom: 20px;
+                font-weight: 1000;
+            }
+
+            &__wrap {
+                display: flex;
+                flex-direction: row;
+                padding-bottom: 20px;
+
+                &__tick {
+                    margin-right: 10px;
+                    padding-left: 5px;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background-color: $buttonBackground;
+
+                    img {
+                        width: 10px;
+                        height: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
