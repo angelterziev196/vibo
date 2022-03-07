@@ -6,15 +6,28 @@
     background-image: url('/src/images/gettheapp/background.png');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
 
     &__holder {
+        width: 100%;
+        height: auto;
+        @include breakpoint(desktop) {
+            height: 100vh;
+        }
+
         &__phone {
-            padding: 100px 0 30px 300px;
+            display: none;
+            @include breakpoint(desktop) {
+                display: block;
+                padding: 100px 30px 0 300px;
+            }
         }
 
         &__info {
-            padding: 250px 250px 250px 40px;
+            padding: 50px;
+            @include breakpoint(desktop) {
+                padding: 250px 250px 0 40px;
+            }
+
             font-family: $sansSerif;
 
             h3 {
@@ -24,14 +37,18 @@
             }
 
             p {
-                line-height: 30px;
                 color: $white;
                 padding-bottom: 30px;
+
+                @include breakpoint(desktop) {
+                    line-height: 30px;
+                }
             }
 
             &__platforms {
                 img {
-                    height: 36px;
+                    cursor: pointer;
+                    height: 40px;
                 }
             }
         }
