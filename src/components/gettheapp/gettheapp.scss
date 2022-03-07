@@ -1,0 +1,39 @@
+@use '/src/styles/globals/utilities';
+@import '/src/styles/globals/variables';
+@import '/src/styles/globals/mixins';
+
+.gettheapp {
+    background-image: url('/src/images/gettheapp/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+
+    &__holder {
+        &__phone {
+            padding: 100px 0 30px 300px;
+        }
+
+        &__info {
+            padding: 250px 250px 250px 40px;
+            font-family: $sansSerif;
+
+            h3 {
+                color: $downloadBlue;
+                font-weight: 600;
+                padding-bottom: 30px;
+            }
+
+            p {
+                line-height: 30px;
+                color: $white;
+                padding-bottom: 30px;
+            }
+
+            &__platforms {
+                img {
+                    height: 36px;
+                }
+            }
+        }
+    }
+}
