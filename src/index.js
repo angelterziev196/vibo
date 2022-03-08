@@ -1,21 +1,25 @@
 import './styles/index.scss';
 
-document.addEventListener('DOMContentLoaded', () => {
-    const body = document.querySelector('body');
-    console.log(body);
+class Burger {
+    navHolderList = document.querySelector('.navigation__holder__list');
+    burgerMenu = document.querySelector('.menu__btn');
+    openMenuFlag = false;
 
-    const elvenShieldRecipe = {
-        leatherStrips: 2,
-        ironIngot: 1,
-        refinedMoonstone: 4,
-    };
+    constructor() {
+        this.burgerMenu.addEventListener('click', () => {
+            this._burgerAnimation();
+            this._toggleMenu();
+        });
+    }
 
-    const elvenGauntlets = {
-        ...elvenShieldRecipe,
+    _burgerAnimation() {
+        this.burgerMenu.classList.toggle('menu__btn--open');
+    }
 
-        leatherSkin: 3,
-    };
+    _toggleMenu() {
+        this.navHolderList.classList.toggle('navigation__holder__list--open');
+        this.openMenuFlag = true;
+    }
+}
 
-    console.log(elvenGauntlets);
-    console.log(elvenShieldRecipe);
-});
+document.onload = new Burger();
