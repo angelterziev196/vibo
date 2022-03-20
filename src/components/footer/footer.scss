@@ -1,0 +1,23 @@
+@use '/src/styles/globals/utilities';
+@import '/src/styles/globals/variables';
+@import '/src/styles/globals/mixins';
+
+.footer {
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: $downloadBlue;
+    color: $white;
+
+    &__rights {
+        font-family: $sansSerif;
+    }
+
+    &__socials {
+        img {
+            padding-left: 30px;
+        }
+    }
+}
