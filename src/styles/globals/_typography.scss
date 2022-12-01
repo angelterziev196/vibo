@@ -1,20 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
 @import './variables';
+@import './buttons';
 
 h2 {
     font-family: $sansSerif;
     font-weight: 600;
 }
+
 h3 {
     font-family: $sansSerif;
     font-size: 30px;
     font-weight: 1000;
 }
+
 h5 {
     font-family: $sansSerif;
     font-weight: 600;
     font-size: 24px;
 }
+
 p {
     font-family: $sansSerif;
+    margin: 0;
 }

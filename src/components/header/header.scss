@@ -1,13 +1,17 @@
-@use '/src/styles/globals/utilities';
+@import '/src/styles/globals/utilities';
 @import '/src/styles/globals/variables';
 @import '/src/styles/globals/mixins';
 
 .header {
-    height: 100vh;
     background-image: url('/src/images/header/header-background.png');
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
+    padding: 100px 50px 200px;
+
+    @include breakpoint(desktop) {
+        height: 100vh;
+    }
 
     &::after {
         content: '';
@@ -31,6 +35,7 @@
 
         @include breakpoint(desktop) {
             // display: none;
+
             display: initial;
             max-width: 450px;
         }

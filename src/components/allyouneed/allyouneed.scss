@@ -1,4 +1,4 @@
-@use '/src/styles/globals/utilities';
+@import '/src/styles/globals/utilities';
 @import '/src/styles/globals/variables';
 @import '/src/styles/globals/mixins';
 
@@ -13,7 +13,7 @@
 
             @include breakpoint(desktop) {
                 display: initial;
-                padding: 76px 96px 70px;
+                padding: 76px 0 76px;
             }
         }
 
