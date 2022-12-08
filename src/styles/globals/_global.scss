@@ -1,1 +1,9 @@
-@use 'variables';
+@import 'variables';
+
+.header__holder {
+    font-family: $sansSerif;
+}
+
+.services__holder__services {
+    font-family: $sansSerif;
+}

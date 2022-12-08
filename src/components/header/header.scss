@@ -1,9 +1,9 @@
-@use '/src/styles/globals/utilities';
+@import '/src/styles/globals/utilities';
 @import '/src/styles/globals/variables';
 @import '/src/styles/globals/mixins';
 
 .header {
-    height: 100vh;
+    min-height: 100vh;
     background-image: url('/src/images/header/header-background.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -30,7 +30,6 @@
         display: none;
 
         @include breakpoint(desktop) {
-            // display: none;
             display: initial;
             max-width: 450px;
         }
@@ -45,7 +44,6 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        font-family: $sansSerif;
         color: $white;
 
         &__title {
@@ -61,11 +59,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-
-            // @include breakpoint(desktop) {
-            //     display: block;
-            //     margin-bottom: 30px;
-            // }
 
             @include breakpoint(tablet) {
                 display: block;
@@ -92,7 +85,6 @@
                 border: solid $white 2px;
                 background-color: transparent;
                 color: $white;
-                font-weight: bold;
 
                 &:hover {
                     background-color: $white;

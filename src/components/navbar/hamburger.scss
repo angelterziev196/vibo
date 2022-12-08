@@ -18,7 +18,7 @@
         height: 3px;
         background: $white;
         border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+        box-shadow: 0 2px 5px $hamburgerColor;
         transition: all 0.5s ease-in-out;
 
         &::before,
@@ -29,9 +29,10 @@
             height: 3px;
             background: $white;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+            box-shadow: 0 2px 5px $hamburgerColor;
             transition: all 0.5s ease-in-out;
         }
+
         &::before {
             transform: translateY(-8px);
         }
@@ -51,12 +52,12 @@
     transform: translateX(-50px);
     background: transparent;
     box-shadow: none;
-}
 
-.menu__btn--open .menu__btn--burger::before {
-    transform: rotate(45deg) translate(35px, -35px);
-}
+    &::before {
+        transform: rotate(45deg) translate(35px, -35px);
+    }
 
-.menu__btn--open .menu__btn--burger::after {
-    transform: rotate(-45deg) translate(35px, 35px);
+    &::after {
+        transform: rotate(-45deg) translate(35px, 35px);
+    }
 }

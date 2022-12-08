@@ -6,19 +6,17 @@ class Burger {
     openMenuFlag = false;
 
     constructor() {
+        this._click();
+    }
+
+    _click() {
         this.burgerMenu.addEventListener('click', () => {
-            this._burgerAnimation();
-            this._toggleMenu();
+            this.burgerMenu.classList.toggle('menu__btn--open');
+
+            this.navHolderList.classList.toggle(
+                'navigation__holder__list--open',
+            );
         });
-    }
-
-    _burgerAnimation() {
-        this.burgerMenu.classList.toggle('menu__btn--open');
-    }
-
-    _toggleMenu() {
-        this.navHolderList.classList.toggle('navigation__holder__list--open');
-        this.openMenuFlag = true;
     }
 }
 
