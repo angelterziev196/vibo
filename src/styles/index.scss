@@ -1,2 +1,5 @@
-@use '../components/navbar/navbar.scss';
-@use '../components/header/header.scss';
+@import '../components/navbar/navbar.scss';
+@import '../components/navbar/hamburger.scss';
+@import '../components/header/header.scss';
+@import '../components/services/services.scss';
+@import '../components/download/download.scss';

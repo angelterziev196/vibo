@@ -1,0 +1,88 @@
+@import '/src/styles/globals/utilities';
+@import '/src/styles/globals/variables';
+@import '/src/styles/globals/mixins';
+
+.download {
+    &__holder {
+        width: 100%;
+        font-family: $sansSerif;
+
+        &__description {
+            @include breakpoint(desktop) {
+                padding: 156px 65px 156px 130px;
+            }
+
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            justify-content: flex-end;
+
+            h3 {
+                color: $downloadBlue;
+            }
+
+            p {
+                color: $servicesGray;
+            }
+
+            button {
+                background-color: $white;
+                color: $servicesGray;
+
+                &:hover {
+                    background-color: $buttonBackground;
+                    color: $white;
+                    border: solid $buttonBackground 2px;
+                    transition: background-color 0.4s, color 0.1s, border 0.4s;
+                }
+            }
+        }
+
+        &__perks {
+            margin: 10px;
+
+            @include breakpoint(desktop) {
+                padding: 100px 156px 70px 65px;
+                margin: auto;
+            }
+
+            &__perk {
+                border-radius: 5px;
+                padding: 4px;
+                margin-bottom: 30px;
+                box-shadow: 2px 2px 3px $lightgrey;
+                padding: 20px;
+
+                p {
+                    display: none;
+                }
+
+                &:hover {
+                    background-color: $buttonBackground;
+                    max-height: 200px;
+                    transition: background-color 1s, max-height 1s;
+                }
+
+                &__wrap {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-start;
+                }
+            }
+
+            img {
+                height: 24px;
+            }
+
+            h5 {
+                padding-left: 14px;
+                color: $downloadBlue;
+            }
+
+            p {
+                color: $servicesGray;
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+@import '/src/styles/globals/_variables.scss';
+@import '/src/styles/globals/mixins';
+
+.menu__btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+
+    &--burger {
+        width: 20px;
+        height: 3px;
+        background: $white;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px $hamburgerColor;
+        transition: all 0.5s ease-in-out;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 3px;
+            background: $white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px $hamburgerColor;
+            transition: all 0.5s ease-in-out;
+        }
+
+        &::before {
+            transform: translateY(-8px);
+        }
+
+        &::after {
+            transform: translateY(8px);
+        }
+    }
+
+    @include breakpoint(desktop) {
+        display: none;
+    }
+}
+
+//ANIMATION
+.menu__btn--open .menu__btn--burger {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+
+    &::before {
+        transform: rotate(45deg) translate(35px, -35px);
+    }
+
+    &::after {
+        transform: rotate(-45deg) translate(35px, 35px);
+    }
+}

@@ -1,57 +1,95 @@
-@use '/src/styles/globals/utilities';
+@import '/src/styles/globals/utilities';
 @import '/src/styles/globals/variables';
 @import '/src/styles/globals/mixins';
 
 .header {
-    height: 1000px;
+    min-height: 100vh;
     background-image: url('/src/images/header/header-background.png');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        position: absolute;
+        bottom: -5px;
+        background-image: url('/src/images/header/header-decoration.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 155px;
+        overflow: hidden;
+
+        @include breakpoint(decoration) {
+            display: none;
+        }
+    }
+
+    img {
+        display: none;
+
+        @include breakpoint(desktop) {
+            display: initial;
+            max-width: 450px;
+        }
+    }
 
     &__holder {
+        margin: 0;
+        width: 100%;
         position: relative;
-        top: 227px;
+        top: 128px;
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        color: $white;
 
-        &__inner {
-            font-family: $sansSerif;
-            color: $white;
+        &__title {
+            margin-bottom: 30px;
+        }
 
-            &__title {
-                margin-bottom: 25px;
+        &__description {
+            margin-bottom: 30px;
+        }
+
+        &__buttons {
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @include breakpoint(tablet) {
+                display: block;
+                margin-bottom: 30px;
             }
 
-            &__description {
-                margin-bottom: 50px;
+            &--download {
+                margin-right: 0;
+                margin-bottom: 30px;
+
+                @include breakpoint(tablet) {
+                    margin-right: 30px;
+                }
             }
 
-            &__buttons {
-                margin-bottom: 70px;
-                #downloadButton {
-                    margin-right: 13px;
-                }
+            &--contact {
+                margin-left: 0;
+            }
 
-                #contactUs {
-                    margin-left: 13px;
-                }
+            button {
+                height: 40px;
+                width: 168px;
+                border-radius: 5px;
+                border: solid $white 2px;
+                background-color: transparent;
+                color: $white;
 
-                button {
-                    height: 40px;
-                    width: 167px;
-                    border-radius: 5px;
-                    border: solid $white 2px;
-                    background-color: transparent;
-                    color: $white;
-                    font-weight: bold;
-
-                    &:hover {
-                        background-color: $white;
-                        color: $black;
-                        transition: background-color 0.4s, color 0.4s;
-                    }
+                &:hover {
+                    background-color: $white;
+                    color: $servicesGray;
+                    transition: background-color 0.4s, color 0.4s;
                 }
             }
         }
